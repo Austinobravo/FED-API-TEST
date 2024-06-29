@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>FED API SKILLS</title>
+</head>
+<body>
+    <section class="navbar">
+        <nav>
+            <img src="./assets/images/TestLogo.svg" alt="logo" class="logo" width="150"/>
+            <ul>
+                <li>
+                    <img src="./assets/images/home.svg" alt="" srcset="" width="15">
+                    <span>Overview</span>
+                </li>
+                <li>
+                    <img src="./assets/images/user.svg" alt="" srcset="" width="15">
+                    <span>Patients</span>
+                </li>
+                <li>
+                    <img src="./assets/images/calendar_today.svg" alt="" srcset="" width="15">
+                    <span>Schedule</span>
+                </li>
+                <li>
+                    <img src="./assets/images/chat_bubble.svg" alt="" srcset="" width="15">
+                    <span>Message</span>
+                </li>
+                <li>
+                    <img src="./assets/images/credit_card.svg" alt="" srcset="" width="15">
+                    <span>Transactions</span>
+                </li>
+            </ul>
+            <div class="doctor_and_settings">
+                <img src="./assets/images/doctor.png" alt="doctor" srcset="" width="50">
+                <div>
+                    <h3>Dr Jose Simmons</h3>
+                    <p>General Practitioner</p>
+                </div>
+                <div class="settings">
+                    <img src="./assets/images/settings.svg" alt="" srcset="" width="20">
+                    <img src="./assets/images/vert.svg" alt="" srcset="" width="4">
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <main>
+        <section class="left_sidebar">
+            <div class="patients">
+                <h3>Patients</h3>
+                <img src="./assets/images/search.svg" alt="" srcset="" width="15">
+            </div>
+            <div class="patients_details">
+                <div class="patients_name_and_age">
+                    <img src="./assets/images/user.svg" alt="profile_pic" class="profile_pic" srcset="" width="50">
+                    <div>
+                        <h3 class="name"></h3>
+                        <p>
+                            <span class="gender">Loading...</span>
+                            <span class="age"></span>
+                        </p>
+                    </div>
+                </div>
+                <img src="./assets/images/horiz.svg" alt="" srcset="" class="dot_icon">
+            </div>
+        </section>
+    
+        <section class="main">
+            <div class="diagnosis_history">
+                <h3>Diagnosis History</h3>
+                <div class="diagnosis_history_details">
+                    <div class="chart_and_details">
+                        <div >
+                            <div class="blood_pressure">
+                                <h4>Blood Pressure</h4>
+                                <span>
+                                    <p>Last 6 months</p>
+                                    <img src="./assets/images/expand_more.svg" alt="" sizes="" srcset="" width="7">
+                                </span>
+                            </div>
+                            <div>
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="systolic">
+                                <div class="title">
+                                    <div class="systolic_div"></div>
+                                    <h4>Systolic</h4>
+                                </div>
+                                <p class="reading">160</p>
+                                <div class="higher_average">
+                                    <img src="./assets/images/ArrowUp.svg" alt="" srcset="">
+                                    <p>Higher than Average</p>
+                                </div>
+                            </div>
+                            <hr width="150" style="margin: 10px 0;"/>
+                            <div class="diastolic">
+                                <div class="title">
+                                    <div class="diastolic_div"></div>
+                                    <h4>Diastolic</h4>
+                                </div>
+                                <p class="reading">78</p>
+                                <div class="lower_average">
+                                    <img src="./assets/images/ArrowDown.svg" alt="" srcset="">
+                                    <p>Lower than Average</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vitals">
+                    <div class="respiratory">
+                        <div>
+                            <img src="./assets/images/respiratory rate.svg" alt="" srcset="" width="60">
+                        </div>
+                        <h4>Respiratory Rate</h4>
+                        <h5>20 bpm</h5>
+                        <p>Normal</p>
+                    </div>
+                    <div class="temperature">
+                        <div>
+                            <img src="./assets/images/temperature.svg" alt="" srcset="" width="60">
+                        </div>
+                        <h4>Temperature</h4>
+                        <h5>98.6 F</h5>
+                        <p>Normal</p>
+                    </div>
+                    <div class="heart_rate">
+                        <div>
+                            <img src="./assets/images/HeartBPM.svg" alt="" srcset="" width="60">
+                        </div>
+                        <h4>Heart Rate</h4>
+                        <h5>78 bpm</h5>
+                        <p>
+                            <img src="./assets/images/ArrowDown.svg" alt="" srcset="">
+                            <span>Lower than Average</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="diagnosis_list">
+                <h3>Diagnostic List</h3>
+                <table>
+                    <thead class="table_head">
+                        <tr>
+                            <th>Problem/Diagnosis</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table_body">
+                        <tr>
+                            <td class="name">Hypertension</td>
+                            <td class="description">Chronic high blood pressure</td>
+                            <td class="status">Under observation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="right_sidebar">
+            <div class="details">
+                <div class="name_and_image">
+                    <img src="./assets/images/jessica.png" alt="profile_pic" srcset="" width="200" class="profile_picture">
+                    <h4 class="name">Jessica Taylor</h4>
+                </div>
+                <div>
+                    <div class="personal_details">
+                        <div>
+                            <img src="./assets/images/BirthIcon.svg" alt="" >
+                        </div>
+                        <div>
+                            <h5>Date Of Birth</h5>
+                            <p class="date_of_birth">August 23, 1996</p>
+                        </div>
+                    </div>
+                    <div class="personal_details">
+                        <div>
+                            <img src="./assets/images/FemaleIcon.svg" alt="">
+                        </div>
+                        <div>
+                            <h5>Gender</h5>
+                            <p class="gender"></p>
+                        </div>
+                    </div>
+                    <div class="personal_details">
+                        <div>
+                            <img src="./assets/images/PhoneIcon.svg" alt="">
+                        </div>
+                        <div>
+                            <h5>Contact Info</h5>
+                            <p class="contact_info">+1 (3333) 4733 45</p>
+                        </div>
+                    </div>
+                    <div class="personal_details">
+                        <div>
+                            <img src="./assets/images/PhoneIcon.svg" alt="">
+                        </div>
+                        <div>
+                            <h5>Emergency Contacts</h5>
+                            <p class="emergency_info">+1 (3333) 4733 45</p>
+                        </div>
+                    </div>
+                    <div class="personal_details">
+                        <div>
+                            <img src="./assets/images/InsuranceIcon.svg" alt="">
+                        </div>
+                        <div>
+                            <h5>Insurance Provider</h5>
+                            <p class="insurance_provider">Sunrise Health Assurance</p>
+                        </div>
+                    </div>
+    
+                    <div class="button">
+                        <button type="button">Show All Information</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lab_results">
+                <h4>Lab Results</h4>
+                <div class="lab">
+                    <a href=""  >
+                        <span>Blood Tests</span>
+                        <img src="./assets/images/download.svg" alt="" srcset="">
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <script  src="./assets/js/script.js"></script>
+</body>
+</html>

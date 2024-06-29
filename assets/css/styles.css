@@ -1,0 +1,457 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F6F7F8;
+    font-family: "Manrope", sans-serif;
+    margin: 1rem;
+}
+nav{
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    border-radius: 40px;
+    align-items: center;
+    padding: 10px 2rem;
+    box-shadow: 0px 0px 4px  #e8e7e7 ;
+    margin-bottom: 2rem;
+
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+nav ul li{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    column-gap: 5px;
+    cursor: pointer;
+}
+nav ul li:nth-child(2){
+    background-color: #01F0D0;
+    padding: 10px;
+    border-radius: 20px;
+}
+nav ul li span{
+    font-size: 14px;
+    font-weight: 550;
+    padding-left: 2px;
+}
+
+.doctor_and_settings{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.doctor_and_settings h3{
+    font-size: 14px;
+}
+.doctor_and_settings p{
+    font-size: 12px;
+    opacity: .5;
+}
+
+.settings{
+    padding-left: 10px;
+    column-gap: 15px;
+    display: flex;
+    align-items: center;
+}
+
+main{
+    display: grid;
+    grid-template-columns:  15rem 40rem 18rem;
+    column-gap: 2rem;
+    width: 100%;
+}
+
+
+
+/* Sidebar */
+
+.left_sidebar{
+    background-color: #fff;
+    box-shadow: 0px 0px 4px  #e8e7e7 ;
+    border-radius: 20px;
+    height: 100%;
+    padding: 1rem;
+}
+
+.left_sidebar .patients{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left_sidebar .patients h3{
+    font-size: 1.3rem;
+    opacity: .7;
+}
+.left_sidebar .patients_details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.left_sidebar .patients_details h3{
+    font-size: 14px;
+}
+.left_sidebar .patients_details p{
+    font-size: 12px;
+    opacity: .5;
+}
+.left_sidebar .patients_details .patients_name_and_age{
+    display: flex;
+    align-items: center;
+    
+}
+.left_sidebar .patients_details .patients_name_and_age img{
+    padding-right: 15px;
+    
+}
+
+.main .diagnosis_history{
+    background-color: #fff;
+    box-shadow: 0px 0px 4px  #e8e7e7 ;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.main .diagnosis_history .diagnosis_history_details{
+    background-color: #F4F0FE;
+    box-shadow: 0px 0px 4px  #e8e7e7 ;
+    border-radius: 20px;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+.main .diagnosis_history  .chart_and_details{
+    display: grid;
+    grid-template-columns: 25rem 15rem;
+    column-gap: 10px;
+}
+.main .diagnosis_history  .chart_and_details .blood_pressure{
+    display: flex;
+    justify-content: space-between;
+}
+.main .diagnosis_history  .chart_and_details .blood_pressure span{
+    display: flex;
+   align-items: center;
+   column-gap: 10px;
+}
+.main .diagnosis_history  .chart_and_details .blood_pressure span p{
+    font-size: 14px;
+    opacity: .7;
+}
+.main .diagnosis_history  .chart_and_details .systolic_div {
+    background-color: #E66FD2; 
+    border-radius: 50%; 
+    padding: 4px; 
+    height: 1px; 
+    width: fit-content;
+}
+.main .diagnosis_history  .chart_and_details .systolic .title {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    
+}
+.main .diagnosis_history  .chart_and_details .systolic .title h4{
+    font-size: 14px;
+    
+}
+.main .diagnosis_history  .chart_and_details .systolic .reading{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-weight: 500;
+    
+}
+.main .diagnosis_history  .chart_and_details .systolic .higher_average{
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    font-size: 14px;
+    
+}
+.main .diagnosis_history  .chart_and_details .systolic .higher_average p{
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    opacity: .7;
+    font-size: 14px;
+    
+}
+.main .diagnosis_history  .chart_and_details .systolic .reading{
+    font-size: 1.5rem;
+    margin-top: 5px;
+    
+}
+.main .diagnosis_history  .chart_and_details .diastolic_div {
+    background-color: #8C6FE6; 
+    border-radius: 50%; 
+    padding: 4px; 
+    height: 1px; 
+    width: fit-content;
+}
+.main .diagnosis_history  .chart_and_details .diastolic .title {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    
+}
+.main .diagnosis_history  .chart_and_details .diastolic .title h4{
+    font-size: 14px;
+    
+}
+.main .diagnosis_history  .chart_and_details .diastolic .reading{
+    font-size: 1.5rem;
+    margin: .5rem 0;
+    font-weight: 500;
+    
+}
+.main .diagnosis_history  .chart_and_details .diastolic .lower_average{
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    font-size: 14px;
+    
+}
+.main .diagnosis_history  .chart_and_details .diastolic .lower_average p{
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    opacity: .7;
+    font-size: 14px;
+    
+}
+.main .diagnosis_history  .chart_and_details .diastolic .reading{
+    font-size: 1.5rem;
+    margin-top: 5px;
+    
+}
+
+.main  .vitals{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.main  .respiratory{
+    background-color: #E0F3FA;
+    border-radius: 20px;
+    padding: 10px;
+   
+
+}
+.main  .respiratory p{
+    font-size: 14px;
+    padding-bottom: 10px;
+    
+}
+.main  .respiratory h5{
+    font-size: 1.5rem;
+    padding: 10px 0;
+    
+}
+.main  .respiratory h4{
+    font-size: 14px;
+    padding-top: 10px;
+    font-weight: 500;
+
+}
+.main  .temperature{
+    background-color: #FFE6E9;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.main  .temperature p{
+    font-size: 14px;
+    padding-bottom: 10px;
+    
+}
+.main  .temperature h5{
+    font-size: 1.5rem;
+    padding: 10px 0;
+    
+}
+.main  .temperature h4{
+    font-size: 14px;
+    padding-top: 10px;
+    font-weight: 500;
+
+}
+.main  .heart_rate{
+    background-color: #FFE6F1;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.main  .heart_rate p{
+    font-size: 14px;
+    padding-bottom: 10px;
+    opacity: .7;
+    
+}
+.main  .heart_rate h5{
+    font-size: 1.5rem;
+    padding: 10px 0;
+    
+}
+.main  .heart_rate h4{
+    font-size: 14px;
+    padding-top: 10px;
+    font-weight: 500;
+
+}
+.main .diagnosis_list{
+    background-color: #fff;
+    box-shadow: 0px 0px 4px  #e8e7e7 ;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    overflow-x: scroll;
+}
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table thead{
+    background-color: #F6F7F8;
+    padding: 1rem;
+}
+th{
+    padding: .5rem 8px;
+    text-align: left;
+
+}
+td{
+    padding: .5rem 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+
+}
+
+.right_sidebar .details{
+    background-color: #fff;
+    box-shadow: 0px 0px 4px  #e8e7e7 ;
+    border-radius: 20px;
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.right_sidebar .details .name_and_image{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    row-gap: 20px;
+}
+.right_sidebar .details .name_and_image h4{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.right_sidebar .details .personal_details{
+    display: flex;
+    column-gap: 10px;
+    padding: .2rem 0;
+}
+.right_sidebar .details .personal_details h5{
+    font-weight: 500;
+}
+.right_sidebar .details .personal_details p{
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.right_sidebar .details  button{
+    background-color: #01F0D0;
+    width: fit-content;
+    margin: 0 auto;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+}
+
+
+.right_sidebar .lab_results{
+    background-color: #fff;
+    box-shadow: 0px 0px 4px  #e8e7e7 ;
+    border-radius: 20px;
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+    overflow: auto;
+}
+
+.right_sidebar .lab_results h4{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.right_sidebar .lab_results a{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Media - Tablet and mobile */
+@media screen  and (max-width: 768px){
+    nav{
+        padding: 10px 1rem;
+    
+    }
+    nav .logo{
+        width: 40%;
+    
+    }
+    nav ul{
+        display: none;
+    }
+    .settings{
+        display: block
+    }
+    .settings img:first-child{
+        display: none
+    }
+    .left_sidebar{
+        margin-bottom: 10px;
+    }
+
+    main{
+        display: block;
+    }
+    .main .diagnosis_history  .chart_and_details{
+        display: block;
+    }
+    .doctor_and_settings img:first-child {
+        width: 30px;
+        
+    }
+    .doctor_and_settings h3{
+        font-size: 11px;
+    }
+    .doctor_and_settings p{
+        font-size: 8px;
+        opacity: .5;
+    } 
+
+    
+}
