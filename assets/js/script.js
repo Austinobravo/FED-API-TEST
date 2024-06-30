@@ -34,7 +34,7 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: data.diagnosis_history.map((item) => `${item.month.slice(0,3)}, ${item.year}`).slice(0,7),
+      labels: data.diagnosis_history.map((item) => `${item.month.slice(0,3)}, ${item.year}`).slice(0,6),
       datasets: [{
         backgroundColor: [
           '#E66FD2'
@@ -106,7 +106,6 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
    const rightSidebarPatientDetailsLab = document.querySelector('.lab')
    const rightSidebarPatientDetailsLink = rightSidebarPatientDetailsLab.querySelector('a')
 
-
    // //Populate the right side
    rightSidebarPatientDetails.querySelector('.profile_picture').src = data.profile_picture
    rightSidebarPatientDetails.querySelector('.name').textContent = data.name
@@ -149,7 +148,7 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
    
   }
 const populateData = (data_details) => {
-  const data = data_details.find((patient) => patient.name == "Jessica Taylor")
+  const data = data_details.filter((patient) => patient.name == "Jessica Taylor")
   // data = [
   //   {
   //     name: 'Jessica Falcon',
@@ -371,8 +370,8 @@ const populateData = (data_details) => {
     
   // ]
   populateLeftSidebarPatientDetail(data)
-  populateRightSidebarPatientDetail(data)
-  populateMainPatientDetail(data)
+  populateRightSidebarPatientDetail(data[0])
+  populateMainPatientDetail(data[0])
   }
   // populateData([])
 
