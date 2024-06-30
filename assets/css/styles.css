@@ -80,7 +80,7 @@ main{
     border-radius: 20px;
     height: 100%;
     padding: 1rem;
-}
+} 
 
 .left_sidebar .patients{
     display: flex;
@@ -452,6 +452,11 @@ td{
         font-size: 8px;
         opacity: .5;
     } 
+    .main  .vitals{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 10px;
+    }
 
     
 }
