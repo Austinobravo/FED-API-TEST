@@ -3,6 +3,7 @@ const password = 'skills-test'
 const authKey = btoa(`${username}:${password}`)
 
 fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
+  method: 'GET',
   headers:{
     Authorization: `Basic ${authKey}`
   }
@@ -369,9 +370,14 @@ const populateData = (data_details) => {
   //   },
     
   // ]
-  populateLeftSidebarPatientDetail(data)
-  populateRightSidebarPatientDetail(data[0])
-  populateMainPatientDetail(data[0])
+  if(data){
+    populateLeftSidebarPatientDetail(data)
+    populateRightSidebarPatientDetail(data[0])
+    populateMainPatientDetail(data[0]) 
+  }else{
+    const main = document.querySelector('main')
+    main.textContent = "No Data Found"
+  }
   }
   // populateData([])
 
