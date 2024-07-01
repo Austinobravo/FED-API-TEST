@@ -1,20 +1,13 @@
-const username = 'coalition'
-const password = 'skills-test'
+import {secret} from '../../secret.js'
+const username = secret.USERNAME
+const password = secret.PASSWORD
 const authKey = btoa(`${username}:${password}`)
 
 let isLoading = true
-
-const setDocumentToLoading = () => {
-  document.querySelector('.patients_details').textContent = 'Loading...'
-  document.querySelector('.diagnosis_history_details').textContent = 'Loading...'
-  document.querySelector('.vitals').textContent = 'Loading...'
-  document.querySelector('.diagnosis_list').textContent = 'Loading...'
-  document.querySelector('.details').textContent = 'Loading...'
-  document.querySelector('.lab_results').textContent = 'Loading...'
-}
+const modal = document.querySelector('.modal')
 
 if(isLoading){
-  setDocumentToLoading()
+  modal.style.display = 'flex'
 }
 
 fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
@@ -25,23 +18,28 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
 })
 
 .then((response)=> {
-  response.json()
+  if (!response.ok) {
+    throw new Error('Network response was not ok' + response.statusText);
+  }
+  return response.json();
 }
 )
 .then((value)=>{
   isLoading = false 
   if(!isLoading && value){
+    modal.style.display = 'none'
     populateData(value)
   }else{
     setTimeout(()=> {
       const main = document.querySelector('main')
       main.textContent = "No Data Found, Contact Support."
-    }, 30000)
+    }, 60000)
   }
     
 })
 .catch((error)=> {
   console.error("err",error)
+  alert('Contact the administrator.')
 })
 
  const populateMainPatientDetail = (data) => {
@@ -159,6 +157,7 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
      const leftSidebarPatientDetailsClone = leftSidebarPatientDetails.cloneNode(true);
      
      // Populate the cloned template with patient data
+
      leftSidebarPatientDetailsClone.querySelector('.name').textContent = patient.name;
      leftSidebarPatientDetailsClone.querySelector('.profile_pic').src = patient?.profile_picture;
      leftSidebarPatientDetailsClone.querySelectorAll('.gender').forEach(el => el.textContent = patient.gender);
@@ -172,6 +171,7 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
 
    
   }
+  
 const populateData = (data_details) => {
   const data = data_details.filter((patient) => patient.name == "Jessica Taylor")
   // data = [
