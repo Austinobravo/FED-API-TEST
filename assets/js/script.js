@@ -12,6 +12,7 @@ const setDocumentToLoading = () => {
   document.querySelector('.details').textContent = 'Loading...'
   document.querySelector('.lab_results').textContent = 'Loading...'
 }
+
 if(isLoading){
   setDocumentToLoading()
 }
@@ -31,10 +32,13 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
   isLoading = false 
   if(!isLoading && value){
     populateData(value)
+  }else{
+    setTimeout(()=> {
+      const main = document.querySelector('main')
+      main.textContent = "No Data Found, Contact Support."
+    }, 30000)
   }
-  
-
-  
+    
 })
 .catch((error)=> {
   console.error("err",error)
@@ -169,7 +173,6 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
    
   }
 const populateData = (data_details) => {
-  console.log('data', data_details)
   const data = data_details.filter((patient) => patient.name == "Jessica Taylor")
   // data = [
   //   {
