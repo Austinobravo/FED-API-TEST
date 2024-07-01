@@ -2,6 +2,20 @@ const username = 'coalition'
 const password = 'skills-test'
 const authKey = btoa(`${username}:${password}`)
 
+let isLoading = true
+
+const setDocumentToLoading = () => {
+  document.querySelector('.patients_details').textContent = 'Loading...'
+  document.querySelector('.diagnosis_history_details').textContent = 'Loading...'
+  document.querySelector('.vitals').textContent = 'Loading...'
+  document.querySelector('.diagnosis_list').textContent = 'Loading...'
+  document.querySelector('.details').textContent = 'Loading...'
+  document.querySelector('.lab_results').textContent = 'Loading...'
+}
+if(isLoading){
+  setDocumentToLoading()
+}
+
 fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
   method: 'GET',
   headers:{
@@ -9,11 +23,17 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
   }
 })
 
-.then((response)=> 
+.then((response)=> {
   response.json()
+}
 )
 .then((value)=>{
-  populateData(value)
+  isLoading = false 
+  if(!isLoading && value){
+    populateData(value)
+  }
+  
+
   
 })
 .catch((error)=> {
@@ -149,6 +169,7 @@ fetch('https://fedskillstest.coalitiontechnologies.workers.dev',{
    
   }
 const populateData = (data_details) => {
+  console.log('data', data_details)
   const data = data_details.filter((patient) => patient.name == "Jessica Taylor")
   // data = [
   //   {

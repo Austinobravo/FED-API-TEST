@@ -2,7 +2,7 @@
 
 This is a test project i built to show my api integration skills.
 
-I integrate an api to an index.html page using vanilla jsvascript.
+I integrated an api to an index.html page using vanilla jsvascript.
 
 Currently the project is here:
 
